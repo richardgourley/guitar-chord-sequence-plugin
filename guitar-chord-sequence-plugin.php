@@ -38,10 +38,10 @@ function choose_chord_grouping(){
     $chord_grouping_buttons = '';
 
     foreach( $chord_groupings as $chord_grouping ){
-        $php_self = $_SERVER['PHP_SELF'];
-        $chord_grouping_buttons .= '<form method="post" action="' . esc_url( admin_url('admin-post.php') ) . '">';
-        $chord_grouping_buttons .= '<input type="submit" name="' . $chord_grouping['name'] . '" value="' . $chord_grouping['name'] . '"';
-        $chord_grouping_buttons .= '<input type="hidden" name="action" value="guitar_chord_form"';
+        $admin_post_url = esc_url( admin_url('admin-post.php') );
+        $chord_grouping_buttons .= '<form method="post" action="' . $admin_post_url . '">';
+        $chord_grouping_buttons .= '<input type="submit" name="' . $chord_grouping['name'] . '" value="' . $chord_grouping['name'] . '">';
+        $chord_grouping_buttons .= '<input type="hidden" name="action" value="contact_form">';
         $chord_grouping_buttons .= '</form>';
         $chord_grouping_buttons .= '<br><br>';
     }
@@ -49,7 +49,11 @@ function choose_chord_grouping(){
     return $chord_grouping_buttons;
 }
 
+function test_form(){
+    var_dump( $_POST ); 
+    echo "Hello world";
+    return 'Hello world!';
+}
 
-
-add_action( 'admin_post_nopriv_guitar_chord_form', 'test_form_working' );
+add_action( 'admin_post_contact_form', 'test_form' );
 add_shortcode( 'select_a_chord_grouping', 'choose_chord_grouping');
