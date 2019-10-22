@@ -80,14 +80,6 @@ function display_chord_grouping_buttons(){
     return $output . $chord_grouping_buttons;
 }
 
-function uagb_render_test(){
-    $output = '';
-    
-    $output .= '<!-- wp:uagb/post-grid {"block_id":"2d293bbc-dc37-4a71-b9fb-39f33c63b407"} /-->';
-
-    return $output;
-}
-
 //add_action( 'admin_post_contact_form_test', 'test_form' );
 add_shortcode( 'display_chord_buttons', 'display_chord_grouping_buttons');
-add_shortcode( 'test_render', 'uagb_render_test' );
+
