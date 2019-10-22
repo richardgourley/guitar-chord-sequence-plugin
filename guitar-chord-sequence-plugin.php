@@ -9,7 +9,7 @@
 * License: GPLv2 or later
 */
 
-function choose_chord_grouping(){
+function get_chord_groupings(){
     $chord_groupings = array(
         array(
             'name' => '3 major chords',
@@ -34,26 +34,60 @@ function choose_chord_grouping(){
         )
     );
 
+    return $chord_groupings;
+}
+
+function shuffle_chords( $chords ){
+    $output = '';
+    shuffle( $chords );
+    foreach( $chords as $chord ){
+        $output .= $chord . ' ';
+    }
+    return $output;
+}
+
+function display_chords( $chord_groupings ){
+    $output = '';
+    if( $_SERVER['REQUEST_METHOD'] == 'POST' && isset( $_POST['chord_grouping'] )){
+        foreach( $chord_groupings as $chord_grouping ){
+            if( $_POST['chord_grouping'] == $chord_grouping['name']){
+                $output .= '<h3>' . shuffle_chords( $chord_grouping['chords'] ) . '</h3>';
+            }
+        }   
+    }
+    return $output;
+}
+
+function display_chord_grouping_buttons(){
+    $chord_groupings = get_chord_groupings();
 
     $chord_grouping_buttons = '';
+    $output = '';
 
     foreach( $chord_groupings as $chord_grouping ){
         $admin_post_url = esc_url( admin_url('admin-post.php') );
-        $chord_grouping_buttons .= '<form method="post" action="' . $admin_post_url . '">';
-        $chord_grouping_buttons .= '<input type="submit" name="' . $chord_grouping['name'] . '" value="' . $chord_grouping['name'] . '">';
-        $chord_grouping_buttons .= '<input type="hidden" name="action" value="contact_form">';
+        $chord_grouping_buttons .= '<form method="post" action="' . get_permalink() . '">';
+        $chord_grouping_buttons .= '<input type="submit" id="chord_grouping" name="chord_grouping" value="' . 
+        $chord_grouping['name'] . '">';
+        //$chord_grouping_buttons .= '<input type="hidden" name="action" value="contact_form_test">';
         $chord_grouping_buttons .= '</form>';
-        $chord_grouping_buttons .= '<br><br>';
+        //$chord_grouping_buttons .= '<br><br>';
     }
+    //var_dump( $_POST );
 
-    return $chord_grouping_buttons;
+    $output .= display_chords( $chord_groupings );
+
+    return $output . $chord_grouping_buttons;
 }
 
-function test_form(){
-    var_dump( $_POST ); 
-    echo "Hello world";
-    return 'Hello world!';
+function uagb_render_test(){
+    $output = '';
+    
+    $output .= '<!-- wp:uagb/post-grid {"block_id":"2d293bbc-dc37-4a71-b9fb-39f33c63b407"} /-->';
+
+    return $output;
 }
 
-add_action( 'admin_post_contact_form', 'test_form' );
-add_shortcode( 'select_a_chord_grouping', 'choose_chord_grouping');
+//add_action( 'admin_post_contact_form_test', 'test_form' );
+add_shortcode( 'display_chord_buttons', 'display_chord_grouping_buttons');
+add_shortcode( 'test_render', 'uagb_render_test' );
