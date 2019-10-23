@@ -9,6 +9,8 @@
 * License: GPLv2 or later
 */
 
+if(!defined( 'ABSPATH' )) exit;
+
 function get_chord_groupings(){
     $chord_groupings = array(
         array(
