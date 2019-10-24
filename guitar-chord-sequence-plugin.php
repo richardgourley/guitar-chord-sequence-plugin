@@ -12,6 +12,10 @@
 if(!defined( 'ABSPATH' )) exit;
 
 //Here we add in our init classes for registering CPT and metaboxes
+require_once
+dirname( __FILE__ ) . '/classes-init/class-gcs-custom-post-type-initializer.php';
+
+//$test = new GCS_Custom_Post_Type_Initializer();
 
 function get_chord_groupings(){
     $chord_groupings = array(
