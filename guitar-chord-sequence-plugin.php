@@ -2,7 +2,7 @@
 /*
 * Plugin Name: Guitar Chord Sequence Plugin
 * Plugin URI: http://wprevs.com
-* Description: A plugin for guitarists that creates a page where chord sequences of different lengths are generated at the click of a button. It can be useful for practicing the guitar or even writing songs.   
+* Description: A plugin for guitarists that creates a part of a page or post, where chord sequences of different lengths can be generated at the click of a button. It can be useful for practicing the guitar or even writing songs.   
 * Author: wprevs.com
 * Version: 1.0.0
 * Author URI: http://wprevs.com
@@ -10,6 +10,8 @@
 */
 
 if(!defined( 'ABSPATH' )) exit;
+
+//Here we add in our init classes for registering CPT and metaboxes
 
 function get_chord_groupings(){
     $chord_groupings = array(
