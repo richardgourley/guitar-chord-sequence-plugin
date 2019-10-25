@@ -21,7 +21,16 @@ function getChords(id){
 
 //displays shuffled chords in chordSequenceDisplayDiv
 function printChords(chords){
-
+    let outputStr = '';
+    let shuffledChords = shuffleChords(chords);
+    for(i=0; i<shuffledChords.length; i++){
+    	if(i == (shuffledChords.length -1)){
+    		outputStr += shuffledChords[i];
+    	}else{
+    		outputStr += shuffledChords[i] + ' ';
+    	}
+    }
+    chordSequenceDisplayDiv.innerHTML = '<h1>' + outputStr + '</h1>';
 }
 
 function shuffleChords(chords){
