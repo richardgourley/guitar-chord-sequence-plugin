@@ -47,15 +47,6 @@ function get_chord_groupings(){
     return $chord_groupings;
 }
 
-function shuffle_chords( $chords ){
-    $output = '';
-    shuffle( $chords );
-    foreach( $chords as $chord ){
-        $output .= $chord . ' ';
-    }
-    return $output;
-}
-
 function display_chords( $chord_groupings ){
     $output = '';
     if( $_SERVER['REQUEST_METHOD'] == 'POST' && isset( $_POST['chord_grouping'] )){
