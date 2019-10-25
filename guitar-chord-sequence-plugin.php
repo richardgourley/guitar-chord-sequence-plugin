@@ -67,7 +67,7 @@ function display_chords( $chord_groupings ){
     }
     return $output;
 }
-
+/*
 function display_chord_grouping_buttons(){
     $chord_groupings = get_chord_groupings();
 
@@ -86,8 +86,22 @@ function display_chord_grouping_buttons(){
     $output .= display_chords( $chord_groupings );
 
     return $output . $chord_grouping_buttons;
+}
+*/
 
+function display_chord_grouping_buttons(){
+    $html = '';
+    foreach( get_chord_groupings() as $chord_grouping ){
+        $html .= '<div>';
+        $html .= '<button>' . $chord_grouping['name'] . '</button>';
+        $html .= '</div>';
+    }
+    return $html;
 }
 
-add_shortcode( 'display_chord_buttons', 'display_chord_grouping_buttons');
+function send_php_array_to_javascript(){
+    //Here we use localize_script to send our php to be used in a JS file.
+}
+
+add_shortcode( 'display_chord_buttons', 'display_chord_grouping_buttons' );
 
