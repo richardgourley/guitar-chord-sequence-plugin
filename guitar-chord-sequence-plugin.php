@@ -11,6 +11,8 @@
 
 if(!defined( 'ABSPATH' )) exit;
 
+
+
 //Here we add in our init classes for registering CPT and metaboxes
 require_once
 dirname( __FILE__ ) . '/classes-init/class-gcs-custom-post-type-initializer.php';
@@ -77,17 +79,15 @@ function display_chord_grouping_buttons(){
         $chord_grouping_buttons .= '<form method="post" action="' . get_permalink() . '">';
         $chord_grouping_buttons .= '<input type="submit" id="chord_grouping" name="chord_grouping" value="' . 
         $chord_grouping['name'] . '">';
-        //$chord_grouping_buttons .= '<input type="hidden" name="action" value="contact_form_test">';
-        $chord_grouping_buttons .= '</form>';
-        //$chord_grouping_buttons .= '<br><br>';
+        $chord_grouping_buttons .= '</form>'; 
     }
-    //var_dump( $_POST );
+
 
     $output .= display_chords( $chord_groupings );
 
     return $output . $chord_grouping_buttons;
+
 }
 
-//add_action( 'admin_post_contact_form_test', 'test_form' );
 add_shortcode( 'display_chord_buttons', 'display_chord_grouping_buttons');
 
