@@ -17,6 +17,7 @@ dirname( __FILE__ ) . '/classes-init/class-gcs-custom-post-type-initializer.php'
 require_once
 dirname( __FILE__ ) . '/classes-init/class-gcs-scripts-initializer.php';
 
+//initializes js and css on load
 $gcs_scripts_initializer = new GCS_Scripts_Initializer( get_chord_groupings() );
 
 function get_chord_groupings(){
