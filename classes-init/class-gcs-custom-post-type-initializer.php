@@ -11,6 +11,8 @@ class GCS_Custom_Post_Type_Initializer{
     }
 
     public function add_key_chord_grouping_post_type(){
+        $labels = array(
 
+        );
     }
 }
