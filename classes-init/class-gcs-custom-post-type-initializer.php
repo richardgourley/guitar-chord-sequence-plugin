@@ -38,7 +38,26 @@ class GCS_Custom_Post_Type_Initializer{
 		    "attributes" => __( "Key Chord Grouping attributes" ),
         );
         $args = array(
-
+            "label" => __( "Key Chord Grouping" ),
+		    "labels" => $labels,
+		    "description" => "This post type will contain post meta of chords in a particular musical key.",
+		    "public" => true,
+		    "publicly_queryable" => true,
+		    "show_ui" => false,
+		    "delete_with_user" => false,
+		    "show_in_rest" => true,
+		    "rest_base" => "",
+		    "rest_controller_class" => "WP_REST_Posts_Controller",
+		    "has_archive" => false,
+		    "show_in_menu" => false,
+		    "show_in_nav_menus" => false,
+		    "exclude_from_search" => false,
+		    "capability_type" => "post",
+		    "map_meta_cap" => true,
+		    "hierarchical" => false,
+		    "rewrite" => array( "slug" => "key_chord_grouping", "with_front" => true ),
+		    "query_var" => false,
+		    "supports" => array( "title", "thumbnail" ),
         );
     }
 }
