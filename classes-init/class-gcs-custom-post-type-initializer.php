@@ -59,5 +59,7 @@ class GCS_Custom_Post_Type_Initializer{
 		    "query_var" => false,
 		    "supports" => array( "title", "thumbnail" ),
         );
+
+        register_post_type( 'key_chord_grouping', $args );
     }
 }
