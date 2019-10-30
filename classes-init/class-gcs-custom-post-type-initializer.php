@@ -14,5 +14,8 @@ class GCS_Custom_Post_Type_Initializer{
         $labels = array(
 
         );
+        $args = array(
+
+        );
     }
 }
