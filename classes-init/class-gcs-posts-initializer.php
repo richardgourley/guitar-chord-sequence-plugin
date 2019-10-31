@@ -24,6 +24,50 @@ class GCS_Posts_Initializer{
                 'minor3' => 'Em'
             )
         );
+        $this->generate_post(
+            'Key of G', 
+            array(
+                'root_major' => 'G',
+                'root_minor' => 'Em',
+                'major2' => 'C',
+                'major3' => 'D',
+                'minor2' => 'Am',
+                'minor3' => 'Bm'
+            )
+        );
+        $this->generate_post(
+            'Key of F', 
+            array(
+                'root_major' => 'F',
+                'root_minor' => 'Dm',
+                'major2' => 'Bb',
+                'major3' => 'C',
+                'minor2' => 'Gm',
+                'minor3' => 'Am'
+            )
+        );
+        $this->generate_post(
+            'Key of E', 
+            array(
+                'root_major' => 'E',
+                'root_minor' => 'C#m',
+                'major2' => 'A',
+                'major3' => 'B',
+                'minor2' => 'F#m',
+                'minor3' => 'G#m'
+            )
+        );
+        $this->generate_post(
+            'Key of Eb', 
+            array(
+                'root_major' => 'Eb',
+                'root_minor' => 'Cm',
+                'major2' => 'Ab',
+                'major3' => 'Bb',
+                'minor2' => 'Fm',
+                'minor3' => 'Gm'
+            )
+        );
     }
     
     /***********
