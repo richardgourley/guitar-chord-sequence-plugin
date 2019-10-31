@@ -18,6 +18,8 @@ require_once
 dirname( __FILE__ ) . '/classes-init/class-gcs-scripts-initializer.php';
 require_once
 dirname( __FILE__ ) . '/classes-init/class-gcs-posts-initializer.php';
+require_once
+dirname( __FILE__ ) . '/classes-deactivate/class-gcs-deactivation.php';
 
 //initializes js and css on load
 $gcs_scripts_initializer = new GCS_Scripts_Initializer( get_chord_groupings() );
@@ -30,6 +32,10 @@ register_activation_hook( __FILE__, array( $gcs_cpt_initializer, 'rewrite_rules'
 //insert key_chord_grouping posts into db, with chords saved to postmeta table
 $gcs_posts_initializer = new GCS_Posts_Initializer();
 register_activation_hook( __FILE__, array( $gcs_posts_initializer, 'generate_posts' ) );
+
+//deactivation class unregisters post type on plugin deactivation
+$gcs_plugin_deactivation = new GCS_Plugin_Deactivation();
+register_deactivation_hook( __FILE__, array( $gcs_plugin_deactivation, 'remove_custom_post_type' ) );
 
 
 function get_chord_groupings(){
