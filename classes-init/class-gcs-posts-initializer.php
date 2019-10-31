@@ -13,16 +13,28 @@ class GCS_Posts_Initializer{
     * Post meta is then added to an array that is passed onto our JS file that generates chord sequences
     **********/
     public function generate_posts(){
-
+        generate_post(
+            'Key of C', 
+            array(
+                'chord1' =>
+            )
+        );
     }
     
     /***********
-    * @params = post_title, post_type, comment_status, meta_input (ARRAY OF CHORDS AS POST META)
+    * @params = post_title, meta_input (ARRAY OF CHORDS AS POST META)
     * returns - empty
     * Inserts a post with the paramaters provided
     ************/
-    private function generate_post(){
-
+    private function generate_post( $post_title, $meta_input ){
+        //post_type and comment_status set without params
+        $post_array = array(
+            'post_title'     => $post_title,
+            'post_type'      => 'key_chord_grouping',
+            'comment_status' => 'closed',
+            'meta_input'     => $meta_input
+        );
+        wp_insert_post( $post_array );
     }
 
 	
