@@ -5,5 +5,9 @@ class GCS_Model{
 		
 	}
 
+    public function get_chord_groupings(){
+        
+    }
+
 	
 }
