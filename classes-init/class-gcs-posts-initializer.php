@@ -16,7 +16,12 @@ class GCS_Posts_Initializer{
         generate_post(
             'Key of C', 
             array(
-                'chord1' =>
+                'root_major' => 'C',
+                'root_minor' => 'Am',
+                'major2' => 'F',
+                'major3' => 'G',
+                'minor2' => 'Dm',
+                'minor3' => 'Em'
             )
         );
     }
