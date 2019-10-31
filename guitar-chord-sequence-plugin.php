@@ -16,10 +16,11 @@ require_once
 dirname( __FILE__ ) . '/classes-init/class-gcs-custom-post-type-initializer.php';
 require_once
 dirname( __FILE__ ) . '/classes-init/class-gcs-scripts-initializer.php';
+require_once
+dirname( __FILE__ ) . '/classes-init/class-gcs-posts-initializer.php';
 
 //initializes js and css on load
 $gcs_scripts_initializer = new GCS_Scripts_Initializer( get_chord_groupings() );
-
 
 //registers the custom post type (key_chord_grouping)
 $gcs_cpt_initializer = new GCS_Custom_Post_Type_Initializer();
