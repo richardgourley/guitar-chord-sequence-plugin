@@ -27,7 +27,7 @@ dirname( __FILE__ ) . '/classes-model/class-gcs-model.php';
 $gcs_model_class = new GCS_Model();
 
 //initializes js and css on load (Model class method passed in as param)
-$gcs_scripts_initializer = new GCS_Scripts_Initializer( $gcs_model_class->get_chord_groupings() );
+$gcs_scripts_initializer = new GCS_Scripts_Initializer( $gcs_model_class );
 
 //registers the custom post type (key_chord_grouping)
 $gcs_cpt_initializer = new GCS_Custom_Post_Type_Initializer();
@@ -41,6 +41,21 @@ register_activation_hook( __FILE__, array( $gcs_posts_initializer, 'generate_pos
 //deactivation class unregisters post type on plugin deactivation
 $gcs_plugin_deactivation = new GCS_Plugin_Deactivation();
 register_deactivation_hook( __FILE__, array( $gcs_plugin_deactivation, 'remove_custom_post_type' ) );
+
+function get_chord_groupings(){
+    /*$chord_groupings = [];
+    $query = new WP_Query( array( 'post_type' => 'key_chord_grouping' ) );
+
+    foreach( $query->posts as $key_chord_grouping ){
+        $chord_grouping = [];
+        $chord_grouping['title'] = $key_chord_grouping->post_title;
+        $post_meta = get_post_meta( $key_chord_grouping->ID );
+        $chord_grouping['post_meta'] = $post_meta;
+        array_push( $chord_groupings, $chord_grouping );
+    }
+    return $chord_groupings;*/
+    return array( 1,2,3,4,5 );
+}
 
 function display_chords( $chord_groupings ){
     $output = '';
