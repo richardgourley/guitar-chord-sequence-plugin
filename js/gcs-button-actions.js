@@ -1,3 +1,5 @@
+console.log(chordGroupings);
+/*
 let chordSequenceDisplayDiv = 
 document.getElementById("chordSequenceDisplayDiv");
 
@@ -44,7 +46,7 @@ function shuffleChords(chords){
     }
     return chords;
 }
-
+*/
 
 
 
