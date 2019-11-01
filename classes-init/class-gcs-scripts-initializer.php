@@ -1,9 +1,9 @@
 <?php
 class GCS_Scripts_Initializer{
-    protected $chord_groupings;
+    protected $model_class;
 
-	public function __construct( $chord_groupings ){
-		$this->chord_groupings = $chord_groupings;
+	public function __construct( $model_class ){
+		$this->model_class = $model_class;
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_js' ) );
         add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_css' ) );
 	}
@@ -20,7 +20,7 @@ class GCS_Scripts_Initializer{
         wp_localize_script( 
             'gcs_button_actions_js',
             'chordGroupings',
-            $this->chord_groupings
+            $this->model_class->get_chord_groupings()
         );
 	}
 
@@ -30,4 +30,5 @@ class GCS_Scripts_Initializer{
             plugins_url( 'css/styles.css', __DIR__ )
         );
 	}
+
 }
