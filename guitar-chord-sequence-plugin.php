@@ -11,7 +11,7 @@
 
 if(!defined( 'ABSPATH' )) exit;
 
-//Here we add in our init classes for registering CPT, metaboxes and js, css etc.
+//Here we add in our init classes for registering CPT, JS files, CSS files and 
 require_once
 dirname( __FILE__ ) . '/classes-init/class-gcs-custom-post-type-initializer.php';
 require_once
@@ -20,9 +20,14 @@ require_once
 dirname( __FILE__ ) . '/classes-init/class-gcs-posts-initializer.php';
 require_once
 dirname( __FILE__ ) . '/classes-deactivate/class-gcs-deactivation.php';
+require_once
+dirname( __FILE__ ) . '/classes-model/class-gcs-model.php';
 
-//initializes js and css on load
-$gcs_scripts_initializer = new GCS_Scripts_Initializer( get_chord_groupings() );
+//model class contains methods with db interaction
+$gcs_model_class = new GCS_Model();
+
+//initializes js and css on load (Model class method passed in as param)
+$gcs_scripts_initializer = new GCS_Scripts_Initializer( $gcs_model_class->get_chord_groupings() );
 
 //registers the custom post type (key_chord_grouping)
 $gcs_cpt_initializer = new GCS_Custom_Post_Type_Initializer();
@@ -36,35 +41,6 @@ register_activation_hook( __FILE__, array( $gcs_posts_initializer, 'generate_pos
 //deactivation class unregisters post type on plugin deactivation
 $gcs_plugin_deactivation = new GCS_Plugin_Deactivation();
 register_deactivation_hook( __FILE__, array( $gcs_plugin_deactivation, 'remove_custom_post_type' ) );
-
-
-function get_chord_groupings(){
-    $chord_groupings = array(
-        array(
-            'name' => '3 major chords',
-            'num_chords' => '3',
-            'chords' => array(
-                'G', 'D', 'C'
-            )
-        ),
-        array(
-            'name' => '3 major chords and A minor',
-            'num_chords' => '4',
-            'chords' => array(
-                'G', 'D', 'C', 'Am'
-            )
-        ),
-        array(
-            'name' => '3 major chords and E minor',
-            'num_chords' => '4',
-            'chords' => array(
-                'G', 'D', 'C', 'Em'
-            )
-        )
-    );
-
-    return $chord_groupings;
-}
 
 function display_chords( $chord_groupings ){
     $output = '';
