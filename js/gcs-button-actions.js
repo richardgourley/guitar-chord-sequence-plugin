@@ -1,15 +1,36 @@
 console.log(chordGroupings);
-/*
-let chordSequenceDisplayDiv = 
-document.getElementById("chordSequenceDisplayDiv");
+
+if(document.getElementById("chordSequenceDisplayDiv")){
+    let chordSequenceDisplayDiv = 
+    document.getElementById("chordSequenceDisplayDiv");
+
+    //assign a button for every title chord grouping title
+    chordSequenceDisplayDiv.innerHTML = createButtons();
+
+
+}
+
+function createButtons(){
+    let html = '';
+    let chordGroupingButtons = '';
+    for(i=0; i<chordGroupings.length; i++){
+        html += '<button id="' + chordGroupings[i].title + '">' + chordGroupings[i].title + '</button>';
+    }
+    return html;
+}
+
+
 
 //assigns a function to each button id
 for(i=0; i<chordGroupings.length; i++){
-	document.getElementById("button" + chordGroupings[i].name).onclick = function(){
-		printChords(getChords(this.id));
+	document.getElementById(chordGroupings[i].title).onclick = function(){
+        console.log(this.id);
+        console.log(chordGroupings[i].root_major);
+		//printChords(getChords(this.id));
 	}
 }
 
+/*
 //gets the chords that matches the element id to name
 function getChords(id){
 	let outputStr = '';
