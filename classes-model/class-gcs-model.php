@@ -17,7 +17,12 @@ class GCS_Model{
             $chord_grouping = [];
             $chord_grouping['title'] = $key_chord_grouping->post_title;
             $post_meta = get_post_meta( $key_chord_grouping->ID );
-            $chord_grouping['post_meta'] = $post_meta;
+            $chord_grouping['root_major'] = $post_meta['root_major'][0];
+            $chord_grouping['root_minor'] = $post_meta['root_minor'][0];
+            $chord_grouping['major2'] = $post_meta['major2'][0];
+            $chord_grouping['major3'] = $post_meta['major3'][0];
+            $chord_grouping['minor2'] = $post_meta['minor2'][0];
+            $chord_grouping['minor3'] = $post_meta['minor3'][0];
             array_push( $chord_groupings, $chord_grouping );
         }
 
