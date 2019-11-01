@@ -9,7 +9,7 @@ class GCS_Model{
     * @returns: Array - chord groupings with post meta saved in an array
     *************/
     public function get_chord_groupings(){
-        /*
+        
         $chord_groupings = [];
         $query = new WP_Query( array( 'post_type' => 'key_chord_grouping' ) );
 
@@ -20,10 +20,9 @@ class GCS_Model{
             $chord_grouping['post_meta'] = $post_meta;
             array_push( $chord_groupings, $chord_grouping );
         }
-        */
 
-        //return $chord_groupings;
-        return array(1,2,3,4,5,6,7,8,9,10);
+        return $chord_groupings;
+
     }
 
 	
