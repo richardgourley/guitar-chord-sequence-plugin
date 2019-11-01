@@ -26,7 +26,7 @@ dirname( __FILE__ ) . '/classes-model/class-gcs-model.php';
 //model class contains methods with db interaction
 $gcs_model_class = new GCS_Model();
 
-//initializes js and css on load (Model class method passed in as param)
+//initializes js and css on load (Model class passed in as param)
 $gcs_scripts_initializer = new GCS_Scripts_Initializer( $gcs_model_class );
 
 //registers the custom post type (key_chord_grouping)
@@ -42,45 +42,10 @@ register_activation_hook( __FILE__, array( $gcs_posts_initializer, 'generate_pos
 $gcs_plugin_deactivation = new GCS_Plugin_Deactivation();
 register_deactivation_hook( __FILE__, array( $gcs_plugin_deactivation, 'remove_custom_post_type' ) );
 
-function get_chord_groupings(){
-    /*$chord_groupings = [];
-    $query = new WP_Query( array( 'post_type' => 'key_chord_grouping' ) );
-
-    foreach( $query->posts as $key_chord_grouping ){
-        $chord_grouping = [];
-        $chord_grouping['title'] = $key_chord_grouping->post_title;
-        $post_meta = get_post_meta( $key_chord_grouping->ID );
-        $chord_grouping['post_meta'] = $post_meta;
-        array_push( $chord_groupings, $chord_grouping );
-    }
-    return $chord_groupings;*/
-    return array( 1,2,3,4,5 );
-}
-
-function display_chords( $chord_groupings ){
-    $output = '';
-    if( $_SERVER['REQUEST_METHOD'] == 'POST' && isset( $_POST['chord_grouping'] )){
-        foreach( $chord_groupings as $chord_grouping ){
-            if( $_POST['chord_grouping'] == $chord_grouping['name']){
-                $output .= '<h3>' . shuffle_chords( $chord_grouping['chords'] ) . '</h3>';
-            }
-        }   
-    }
-    return $output;
-}
-
-function display_chord_grouping_buttons(){
-    $html = '';
-    foreach( get_chord_groupings() as $chord_grouping ){
-        $html .= '<div>';
-        $html .= '<button class="chord-button" '; 
-        $html .= 'id="button' . $chord_grouping['name'] . '">';
-        $html .= $chord_grouping['name'] . '</button>';
-        $html .= '</div>';
-    }
+function display_chord_sequence_plugin(){
     $html .= '<div id="chordSequenceDisplayDiv"></div>';
     return $html;
 }
 
-add_shortcode( 'display_chord_buttons', 'display_chord_grouping_buttons' );
+add_shortcode( 'display_chord_sequence_plugin_display', 'display_chord_sequence_plugin' );
 
