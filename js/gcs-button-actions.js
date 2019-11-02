@@ -1,7 +1,4 @@
-console.log(chordGroupings);
-
 if(document.getElementById("chordSequenceButtonsDiv")){
-    console.log(Math.floor(Math.random() * 3));
 
     let chordSequenceButtonsDiv = 
     document.getElementById("chordSequenceButtonsDiv");
@@ -54,18 +51,16 @@ function getChords(id){
 function printChords(obj){
     let rootChord = '';
     //Decide if starting with ROOT MAJOR or ROOT MINOR using random number
-    //set to int 1 or 2
-    let majorOrMinor = Math.floor(Math.random() * 3);
-    if(majorOrMinor == 1){
+    let majorOrMinor = Math.random();
+    if(majorOrMinor >= 0.5){
         rootChord += obj.rootMajor;
     }else{
         rootChord += obj.rootMinor;
     }
     //shuffle rest of chords
     let shuffledChords = shuffleChords([obj.major2, obj.major3, obj.minor2, obj.minor3]);
-    console.log(shuffledChords);
     
-
+    //Display 2,3 and 4 chord sequences
     chordSequenceDisplayDiv.innerHTML = 
         '<h2>2 chords: ' + rootChord + ' ' + shuffledChords[0] + '</h2>' + 
         '<h2>3 chords: ' + rootChord + ' ' + shuffledChords[0] + ' ' + shuffledChords[1] + '</h2>' + 
