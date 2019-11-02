@@ -57,12 +57,12 @@ function printChords(obj){
     //set to int 1 or 2
     let majorOrMinor = Math.floor(Math.random() * 3);
     if(majorOrMinor == 1){
-        outputStr += obj.rootMajor;
+        outputStr += obj.rootMajor + ' ';
     }else{
-        outputStr += obj.rootMinor;
+        outputStr += obj.rootMinor + ' ';
     }
     //shuffle rest of chords
-    let shuffledChords = shuffleChords([obj.major2, obj.major3, obj.minor1, obj.minor2]);
+    let shuffledChords = shuffleChords([obj.major2, obj.major3, obj.minor2, obj.minor3]);
     for(i=0; i<shuffledChords.length; i++){
         if(i == (shuffledChords.length -1)){
             outputStr += shuffledChords[i];
