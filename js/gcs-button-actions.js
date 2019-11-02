@@ -44,7 +44,7 @@ function getChords(id){
             obj.major2 = chordGroupings[i].major2;
             obj.major3 = chordGroupings[i].major3;
             obj.minor2 = chordGroupings[i].minor2;
-            obj.minor3 = chordGroupings[i].minor2;
+            obj.minor3 = chordGroupings[i].minor3;
             return obj;
 		}
 	}
@@ -63,6 +63,7 @@ function printChords(obj){
     }
     //shuffle rest of chords
     let shuffledChords = shuffleChords([obj.major2, obj.major3, obj.minor2, obj.minor3]);
+    console.log(shuffledChords);
     for(i=0; i<shuffledChords.length; i++){
         if(i == (shuffledChords.length -1)){
             outputStr += shuffledChords[i];
@@ -70,7 +71,7 @@ function printChords(obj){
             outputStr += shuffledChords[i] + ' ';
         }
     }
-    chordSequenceDisplayDiv.innerHTML = outputStr;
+    chordSequenceDisplayDiv.innerHTML = '<h2>' + outputStr + '</h2>';
 }
 
 function shuffleChords(chords){
