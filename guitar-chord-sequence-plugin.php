@@ -43,6 +43,7 @@ $gcs_plugin_deactivation = new GCS_Plugin_Deactivation();
 register_deactivation_hook( __FILE__, array( $gcs_plugin_deactivation, 'remove_custom_post_type' ) );
 
 function display_chord_sequence_plugin(){
+    $html .= '<div id="chordSequenceButtonsDiv"></div>';
     $html .= '<div id="chordSequenceDisplayDiv"></div>';
     return $html;
 }
