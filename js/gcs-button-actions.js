@@ -52,26 +52,24 @@ function getChords(id){
 }
 
 function printChords(obj){
-    let outputStr = '';
+    let rootChord = '';
     //Decide if starting with ROOT MAJOR or ROOT MINOR using random number
     //set to int 1 or 2
     let majorOrMinor = Math.floor(Math.random() * 3);
     if(majorOrMinor == 1){
-        outputStr += obj.rootMajor + ' ';
+        rootChord += obj.rootMajor;
     }else{
-        outputStr += obj.rootMinor + ' ';
+        rootChord += obj.rootMinor;
     }
     //shuffle rest of chords
     let shuffledChords = shuffleChords([obj.major2, obj.major3, obj.minor2, obj.minor3]);
     console.log(shuffledChords);
-    for(i=0; i<shuffledChords.length; i++){
-        if(i == (shuffledChords.length -1)){
-            outputStr += shuffledChords[i];
-        }else{
-            outputStr += shuffledChords[i] + ' ';
-        }
-    }
-    chordSequenceDisplayDiv.innerHTML = '<h2>' + outputStr + '</h2>';
+    
+
+    chordSequenceDisplayDiv.innerHTML = 
+        '<h2>2 chords: ' + rootChord + ' ' + shuffledChords[0] + '</h2>' + 
+        '<h2>3 chords: ' + rootChord + ' ' + shuffledChords[0] + ' ' + shuffledChords[1] + '</h2>' + 
+        '<h2>4 chords: ' + rootChord + ' ' + shuffledChords[0] + ' ' + shuffledChords[1] + ' ' + shuffledChords[2] + '</h2>';
 }
 
 function shuffleChords(chords){
