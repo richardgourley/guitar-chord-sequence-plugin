@@ -6,7 +6,7 @@ if(document.getElementById("chordSequenceButtonsDiv")){
     let chordSequenceDisplayDiv = 
     document.getElementById("chordSequenceDisplayDiv");
 
-    //assign a button for every title chord grouping title
+    //assign a button for every chord grouping title
     chordSequenceButtonsDiv.innerHTML = createButtons();
     
     //assign an action for each button onclick
@@ -80,34 +80,6 @@ function shuffleChords(chords){
     }
     return chords;
 }
-
-/*
-//displays shuffled chords in chordSequenceDisplayDiv
-function printChords(chords){
-    let outputStr = '';
-    let shuffledChords = shuffleChords(chords);
-    for(i=0; i<shuffledChords.length; i++){
-    	if(i == (shuffledChords.length -1)){
-    		outputStr += shuffledChords[i];
-    	}else{
-    		outputStr += shuffledChords[i] + ' ';
-    	}
-    }
-    chordSequenceDisplayDiv.innerHTML = '<h1>' + outputStr + '</h1>';
-}
-
-function shuffleChords(chords){
-	//Fisher Yates shuffle algorithm
-    var j, x, i;
-    for (i = chords.length - 1; i > 0; i--) {
-        j = Math.floor(Math.random() * (i + 1));
-        x = chords[i];
-        chords[i] = chords[j];
-        chords[j] = x;
-    }
-    return chords;
-}
-*/
 
 
 
