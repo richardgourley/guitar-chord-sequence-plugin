@@ -44,7 +44,7 @@ register_deactivation_hook( __FILE__, array( $gcs_plugin_deactivation, 'remove_c
 
 function display_chord_sequence_plugin(){
 	$html = '';
-    $html .= '<div id="chordSequenceButtonsDiv" class="boxes-grid"></div>';
+    $html .= '<div id="chordSequenceButtonsDiv" class="chord-sequence-buttons-grid"></div>';
     $html .= '<div id="chordSequenceDisplayDiv"></div>';
     return $html;
 }
