@@ -18,7 +18,7 @@ function createButtons(){
     let html = '';
     let chordGroupingButtons = '';
     for(i=0; i<chordGroupings.length; i++){
-        html += '<div>';
+        html += '<div class="chord-sequence-buttons-div">';
         html += '<button id="' + chordGroupings[i].title + '">' + chordGroupings[i].title + '</button>';
         html += '</div>';
     }
