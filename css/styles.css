@@ -1,6 +1,6 @@
 .chord-sequence-buttons-grid{
   display:grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 50% 50%;
   grid-template-rows: auto;
   border:3px solid #e6e3e3;
   background-color: #fcfcfc;
@@ -9,4 +9,19 @@
 
 .chord-sequence-buttons-div{
   padding:12px;
+}
+
+@media screen and (min-width: 760px){
+  .chord-sequence-buttons-grid{
+	display:grid;
+	grid-template-columns: 33% 33% 33%;
+	grid-template-rows: auto;
+	border:3px solid #e6e3e3;
+	background-color: #fcfcfc;
+	padding:18px;
+  }
+
+  .chord-sequence-buttons-div{
+	padding:12px;
+  }
 }
