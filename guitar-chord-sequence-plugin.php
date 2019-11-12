@@ -51,14 +51,4 @@ function display_chord_sequence_plugin(){
 
 add_shortcode( 'display_chord_sequence_plugin_display', 'display_chord_sequence_plugin' );
 
-function render_my_blocks_test($post){
-	$parsed_blocks = parse_blocks( $post->post_content );
-        $my_block = $parsed_blocks[2];
-        if( $_SERVER['REQUEST_METHOD'] == 'POST' && isset( $_POST['recipe_type'] )){
-        	$my_block['attrs']['categories'] = $_POST['recipe_type'];
-        }else{
-        	$my_block['attrs']['categories'] = '2';
-        }
-        echo render_block( $my_block );
-}
 
