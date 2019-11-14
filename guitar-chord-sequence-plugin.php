@@ -51,4 +51,7 @@ function display_chord_sequence_plugin(){
 
 add_shortcode( 'display_chord_sequence_plugin_display', 'display_chord_sequence_plugin' );
 
+function test_block_registration(){
+    
+}
 
