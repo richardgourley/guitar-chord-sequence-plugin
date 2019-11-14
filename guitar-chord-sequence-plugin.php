@@ -52,6 +52,14 @@ function display_chord_sequence_plugin(){
 add_shortcode( 'display_chord_sequence_plugin_display', 'display_chord_sequence_plugin' );
 
 function test_block_registration(){
-    
+    wp_register_script(
+        'my_example',
+        plugins_url( 'gcs-block.js', __FILE__ ),
+        array( 'wp-blocks', 'wp-element' )
+    );
+
+    register_block_type(
+        
+    );
 }
 
