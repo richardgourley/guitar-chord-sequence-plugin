@@ -53,13 +53,14 @@ add_shortcode( 'display_chord_sequence_plugin_display', 'display_chord_sequence_
 
 function test_block_registration(){
     wp_register_script(
-        'my_example',
+        'my_block_example',
         plugins_url( 'gcs-block.js', __FILE__ ),
         array( 'wp-blocks', 'wp-element' )
     );
 
     register_block_type(
-        
+        'my_block_examples/my_block_example-01',
+        array( 'editor_script' => 'my_block_example' )
     );
 }
 
