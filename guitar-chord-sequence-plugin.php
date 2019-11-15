@@ -55,6 +55,9 @@ function test_block_registration(){
     wp_register_script(
         'my_block_example',
         plugins_url( 'gcs-block.js', __FILE__ ),
+        //Dependencies - 
+        //wp_blocks includes block type registration 
+        //wp-element includes WP Element abstraction for describing structure of blocks
         array( 'wp-blocks', 'wp-element' )
     );
 
