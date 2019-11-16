@@ -1,3 +1,9 @@
+wp.blocks.registerBlockType('guitar-chord-sequence-plugin/key-buttons',{
+    
+});
+
+/*
+alert("Hello world");
 (  function(blocks,element){
     var el = element.createElement;
 
@@ -8,7 +14,7 @@
     };
 
     blocks.registerBlockType(
-        'my_block_examples/my_block_example-01',
+        'guitar-chord-sequence-plugin/example-01-basic',
         {
         title: 'My Block Example 01',
         icon: 'universal-access-alt',
@@ -33,3 +39,5 @@
     window.wp.blocks,
     window.wp.element
 ) );
+
+*/
