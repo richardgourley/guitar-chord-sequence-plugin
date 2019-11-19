@@ -42,24 +42,3 @@ register_activation_hook( __FILE__, array( $gcs_posts_initializer, 'generate_pos
 $gcs_plugin_deactivation = new GCS_Plugin_Deactivation();
 register_deactivation_hook( __FILE__, array( $gcs_plugin_deactivation, 'remove_custom_post_type' ) );
 
-function display_chord_sequence_plugin(){
-	$html = '';
-    $html .= '<div id="chordSequenceButtonsDiv" class="chord-sequence-buttons-grid"></div>';
-    $html .= '<div id="chordSequenceDisplayDiv"></div>';
-    return $html;
-}
-
-add_shortcode( 'display_chord_sequence_plugin_display', 'display_chord_sequence_plugin' );
-
-function register_my_gutenberg_block() {
-   wp_enqueue_script(
-      'gcs-block',
-      plugins_url( 'js/gcs-block.js', __FILE__ ),
-      array( 'wp-blocks', 'wp-element' ),
-      true
-   );
- 
-}
- 
-add_action( 'enqueue_block_editor_assets', 'register_my_gutenberg_block' );
- 
