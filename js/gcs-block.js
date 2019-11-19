@@ -1,43 +1,29 @@
 wp.blocks.registerBlockType('guitar-chord-sequence-plugin/key-buttons',{
-    
+    title: 'Guitar Chord Sequence Buttons',
+    icon: 'smiley', 
+    category: 'common',
+    attributes: {
+        content: {type:'string'},
+        color: {type:'string'}
+    },
+    edit: function(props){
+        return wp.element.createElement("div", null, wp.element.createElement("div", {
+          id: "chordSequenceButtonsDiv",
+          class: "chord-sequence-buttons-grid"
+        }, wp.element.createElement("h3", null, "This is your guitar sequence plugin! The user will see buttons on the page to click and generate chord sequences!")), React.createElement("div", {
+          id: "chordSequenceDisplayDiv"
+        }));
+    },
+    save: function(){
+        return wp.element.createElement("div", null, wp.element.createElement("div", {
+          //id: "chordSequenceButtonsDiv",
+          id: "chordSequenceButtonsDiv",
+          class: "chord-sequence-buttons-grid"
+        }), wp.element.createElement("div", {
+          id: "chordSequenceDisplayDiv"
+        }));
+    }
 });
 
-/*
-alert("Hello world");
-(  function(blocks,element){
-    var el = element.createElement;
 
-    var blockStyle = {
-        backgroundColor: '#900',
-        color: '#fff',
-        padding: '20px',
-    };
 
-    blocks.registerBlockType(
-        'guitar-chord-sequence-plugin/example-01-basic',
-        {
-        title: 'My Block Example 01',
-        icon: 'universal-access-alt',
-        category: 'layout',
-        example: {},
-        edit: function(){
-            return el(
-                'p',
-                {style:blockStyle},
-                'Hello World, step 1 from the editor.'
-            );
-        },
-        save: function(){
-            return el(
-                'p',
-                {style:blockStyle},
-                'Hello World, step 1 from the editor.'
-            );
-        },
-    }  );
-}(
-    window.wp.blocks,
-    window.wp.element
-) );
-
-*/
