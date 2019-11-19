@@ -1,6 +1,6 @@
 # guitar-chord-sequence-plugin
 A Wordpress plugin that generates buttons on a Wordpress page that display different musical keys.
-On clicking a button for a specific key, a chord sequences of 2,3 and 4 chords are generated.
+On clicking a button for a specific key, chord sequences of 2,3 and 4 chords are generated.
 
 The plugin is ideal for song-writers looking for inspiration or guitarists wishing to practice chords from different musical keys.
 
@@ -13,6 +13,7 @@ On generating chord sequences, the code is written to start with either a root m
 - Inserting posts on plugin activation.
 - Registering activation hooks.
 - Enqueuing JS and CSS files the Wordpress way.
+- Gutenberg blocks - registering a block that displays the musical key buttons
 - Deactivation hooks.
 - Separating classes into model classes, init classes and deacivation classes.
 
