@@ -20,6 +20,12 @@ class GCS_Plugin_Deactivation{
 
     private function delete_chord_grouping_posts(){
         global $wpdb;
-        
+        $wpdb->get_results(
+            "DELETE wp_posts, wp_postmeta
+            FROM wp_posts 
+            INNER JOIN wp_postmeta 
+            ON wp_posts.ID = wp_postmeta.post_id
+            WHERE wp_posts.post_type = 'key_chord_grouping'"
+        );
     }
 }
