@@ -6,10 +6,18 @@ class GCS_Plugin_Deactivation{
     }
 
     /******
-    Unregisters 'key_chord_grouping' custom post type on plugin deactivation
+    Unregisters 'key_chord_grouping' custom post type and deletes posts on plugin deactivation hook
     *******/
+    public function de_activate_gcs_plugin(){
+    
+    }
+
     public function remove_custom_post_type(){
         unregister_post_type( 'key_chord_grouping' );
         flush_rewrite_rules();
+    }
+
+    public function delete_chord_grouping_posts(){
+
     }
 }
