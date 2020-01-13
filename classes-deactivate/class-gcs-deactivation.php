@@ -10,6 +10,7 @@ class GCS_Plugin_Deactivation{
     *******/
     public function de_activate_gcs_plugin(){
         $this->remove_custom_post_type();
+        $this->delete_chord_grouping_posts();
     }
 
     private function remove_custom_post_type(){
