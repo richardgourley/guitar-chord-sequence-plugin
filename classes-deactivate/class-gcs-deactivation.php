@@ -12,12 +12,13 @@ class GCS_Plugin_Deactivation{
         $this->remove_custom_post_type();
     }
 
-    public function remove_custom_post_type(){
+    private function remove_custom_post_type(){
         unregister_post_type( 'key_chord_grouping' );
         flush_rewrite_rules();
     }
 
-    public function delete_chord_grouping_posts(){
-
+    private function delete_chord_grouping_posts(){
+        global $wpdb;
+        
     }
 }
