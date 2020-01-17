@@ -6,6 +6,7 @@ wp.blocks.registerBlockType('guitar-chord-sequence-plugin/key-buttons',{
         content: {type:'string'},
         color: {type:'string'}
     },
+
     edit: function(props){
         return wp.element.createElement("div", null, wp.element.createElement("div", {
           id: "chordSequenceButtonsDiv",
@@ -14,18 +15,20 @@ wp.blocks.registerBlockType('guitar-chord-sequence-plugin/key-buttons',{
           id: "chordSequenceDisplayDiv"
         }));
     },
+
     save: function(){
-        return wp.element.createElement("div", null, wp.element.createElement("div", {
+        /*return wp.element.createElement("div", null, wp.element.createElement("div", {
           //id: "chordSequenceButtonsDiv",
           id: "chordSequenceButtonsDiv",
           class: "chord-sequence-buttons-grid"
         }), wp.element.createElement("div", {
           id: "chordSequenceDisplayDiv"
-        }), wp.element.createElement("div", {
-          id: "chordSequenceTestDisplayDiv"
-        }));
-        
+        }));*/
+        return wp.element.createElement("div", {class: "gcs-grid-container"}, 
+        wp.element.createElement("div", {id: "chordSequenceButtonsDiv", class: "chord-sequence-buttons-grid"}), 
+        wp.element.createElement("div", {id: "chordSequenceDisplayDiv", class: "chord-sequence-display-div"}));
     }
+
 });
 
 
