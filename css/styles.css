@@ -1,15 +1,9 @@
-.chord-sequence-buttons-grid{
-  display:grid;
-  grid-template-columns: 50% 50%;
-  grid-template-rows: auto;
+.chord-sequence-buttons-div{
+  display:flex;
+  flex-wrap:wrap;
   border:2px solid #e6e3e3;
   background-color: #fcfcfc;
   padding:16px;
-  
-}
-
-.chord-sequence-buttons-div{
-  padding:12px;
 }
 
 .gcs-grid-container{
