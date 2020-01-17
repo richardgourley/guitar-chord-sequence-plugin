@@ -10,6 +10,7 @@
   flex-wrap: wrap;
   justify-content: center;
   background-color: lightgrey;
+  padding:20px;
 }
 
 .gcs-buttons-flexbox > div{
@@ -17,7 +18,7 @@
 }
 
 .gcs-display-box{
-  padding:10px;
+  padding:20px;
 }
 
 /*
