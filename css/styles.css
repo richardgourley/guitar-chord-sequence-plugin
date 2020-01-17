@@ -1,41 +1,75 @@
-.gcs-grid-container{
-  display:grid;
-  grid-template-columns: 35% 65%;
-  grid-template-rows: auto;
-  padding:5px;
-}
-
-.gcs-buttons-flexbox{
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  background-color: lightgrey;
-  padding:20px;
-}
-
-.gcs-buttons-flexbox > div{
-  margin:9px;
-}
-
-.gcs-display-box{
-  padding:20px;
-}
-
-/*
-@media screen and (min-width: 760px){
-  .chord-sequence-buttons-grid{
-	display:grid;
-	grid-template-columns: 33% 33% 33%;
-	grid-template-rows: auto;
-	border:3px solid #e6e3e3;
-	background-color: #fcfcfc;
-	padding:18px;
+@media screen and (max-width: 480px){
+  .gcs-grid-container{
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    padding:1px;
   }
 
-  .chord-sequence-buttons-div{
-	padding:12px;
+  .gcs-buttons-flexbox{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: lightgrey;
+    padding:2px;
+  }
+
+  .gcs-buttons-flexbox > div{
+    margin:2px;
+  }
+
+  .gcs-display-box{
+    padding:2px;
   }
 }
-*/
+
+@media screen and (min-width: 481px) and (max-width: 1160px){
+  .gcs-grid-container{
+    display:grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: auto;
+    padding:1px;
+  }
+
+  .gcs-buttons-flexbox{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: lightgrey;
+    padding:20px;
+  }
+
+  .gcs-buttons-flexbox > div{
+    margin:9px;
+  }
+
+  .gcs-display-box{
+    padding:20px;
+  }
+}
 
 
+@media screen and (min-width: 1161px){
+  .gcs-grid-container{
+    display:grid;
+    grid-template-columns: 35% 65%;
+    grid-template-rows: auto;
+    padding:1px;
+  }
+
+  .gcs-buttons-flexbox{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: lightgrey;
+    padding:20px;
+  }
+
+  .gcs-buttons-flexbox > div{
+    margin:9px;
+  }
+
+  .gcs-display-box{
+    padding:20px;
+  }
+}
