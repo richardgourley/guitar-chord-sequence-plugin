@@ -21,7 +21,10 @@ wp.blocks.registerBlockType('guitar-chord-sequence-plugin/key-buttons',{
           class: "chord-sequence-buttons-grid"
         }), wp.element.createElement("div", {
           id: "chordSequenceDisplayDiv"
+        }), wp.element.createElement("div", {
+          id: "chordSequenceTestDisplayDiv"
         }));
+        
     }
 });
 
