@@ -16,12 +16,14 @@ if(document.getElementById("chordSequenceButtonsDiv")){
 
 function createButtons(){
     let html = '';
+    html += '<div class="gcs-buttons-flexbox">';
     let chordGroupingButtons = '';
     for(i=0; i<chordGroupings.length; i++){
-        html += '<div class="chord-sequence-buttons-div">';
+        html += '<div>';
         html += '<button id="' + chordGroupings[i].title + '">' + chordGroupings[i].title + '</button>';
         html += '</div>';
     }
+    html += '</div>';
     return html;
 }
 
@@ -64,9 +66,11 @@ function printChords(obj){
     
     //Display 2,3 and 4 chord sequences
     chordSequenceDisplayDiv.innerHTML = 
+        '<div class="gcs-display-box">' + 
         '<h2>2 chords: ' + rootChord + ' ' + shuffledChords[0] + '</h2>' + 
         '<h2>3 chords: ' + rootChord + ' ' + shuffledChords[0] + ' ' + shuffledChords[1] + '</h2>' + 
-        '<h2>4 chords: ' + rootChord + ' ' + shuffledChords[0] + ' ' + shuffledChords[1] + ' ' + shuffledChords[2] + '</h2>';
+        '<h2>4 chords: ' + rootChord + ' ' + shuffledChords[0] + ' ' + shuffledChords[1] + ' ' + shuffledChords[2] + '</h2>'
+        + '</div>';
 }
 
 function shuffleChords(chords){
