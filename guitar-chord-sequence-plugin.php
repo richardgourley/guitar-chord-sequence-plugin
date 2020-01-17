@@ -40,5 +40,7 @@ register_activation_hook( __FILE__, array( $gcs_posts_initializer, 'generate_pos
 
 //deactivation class unregisters post type on plugin deactivation
 $gcs_plugin_deactivation = new GCS_Plugin_Deactivation();
-register_deactivation_hook( __FILE__, array( $gcs_plugin_deactivation, 'remove_custom_post_type' ) );
+register_deactivation_hook( __FILE__, array( $gcs_plugin_deactivation, 'de_activate_gcs_plugin' ) );
+
+
 
