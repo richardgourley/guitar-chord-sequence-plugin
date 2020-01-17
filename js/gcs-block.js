@@ -25,7 +25,7 @@ wp.blocks.registerBlockType('guitar-chord-sequence-plugin/key-buttons',{
           id: "chordSequenceDisplayDiv"
         }));*/
         return wp.element.createElement("div", {class: "gcs-grid-container"}, 
-        wp.element.createElement("div", {id: "chordSequenceButtonsDiv", class: "chord-sequence-buttons-grid"}), 
+        wp.element.createElement("div", {id: "chordSequenceButtonsDiv", class: "chord-sequence-buttons-div"}), 
         wp.element.createElement("div", {id: "chordSequenceDisplayDiv", class: "chord-sequence-display-div"}));
     }
 
