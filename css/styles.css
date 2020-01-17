@@ -1,18 +1,27 @@
-.chord-sequence-buttons-div{
-  display:flex;
-  flex-wrap:wrap;
-  border:2px solid #e6e3e3;
-  background-color: #fcfcfc;
-  padding:16px;
-}
-
 .gcs-grid-container{
   display:grid;
   grid-template-columns: 35% 65%;
   grid-template-rows: auto;
-  border:1px solid red;
+  padding:5px;
 }
 
+.gcs-buttons-flexbox{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: green;
+}
+
+.gcs-buttons-flexbox > div{
+  margin:9px;
+}
+
+.gcs-display-box{
+  padding:10px;
+  background-color:lightblue;
+}
+
+/*
 @media screen and (min-width: 760px){
   .chord-sequence-buttons-grid{
 	display:grid;
@@ -27,4 +36,6 @@
 	padding:12px;
   }
 }
+*/
+
 
